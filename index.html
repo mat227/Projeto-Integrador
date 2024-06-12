@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tsunami Simulation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;     
+    }
+    .button1 {
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+
+    }
+
+    .button1:hover {
+      transform: scale(1.1);
+    }
+
+    .button1 img {
+      width: 200px;
+      height: auto;
+    }
+    
+    .button2 {
+      border: none;
+      background: none;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+
+    }
+
+    .button2:hover {
+      transform: scale(1.1);
+    }
+
+    .button2 img {
+      width: 200px;
+      height: auto;
+    }
+
+   
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script>
+    let fundo;
+
+    function preload() {
+      fundo = loadImage('fundo.jpg');
+      letreiro = loadImage('letreiro.png');
+      letreirovermelho = loadImage('letreirovermelho.png');
+
+    }
+
+    function setup() {
+      createCanvas(800, 500);
+      imageMode(CENTER);
+
+      let tsunamiButton = createButton('');
+      tsunamiButton.html('<img src="fundobotaotsunami.avif" alt="Tsunami">');
+      tsunamiButton.position(width / 2 - 250, height / 2.5);
+      tsunamiButton.addClass('button1');
+      tsunamiButton.mousePressed(() => window.location.href = './Tsunami/tsunami.html');
+
+      let erupcaoButton = createButton('');
+      erupcaoButton.html('<img src="fundoerupcaobotao.avif" alt="Erupção">');
+      erupcaoButton.position(width / 2 + 10, height / 2.5);
+      erupcaoButton.addClass('button2');
+      erupcaoButton.mousePressed(() => window.location.href = './Erupcao/erupcao.html');
+    }
+
+    function draw() {
+      background(220);
+      image(fundo, width / 2, height / 2, width, height);
+
+      fill(0);
+      textFont('VERDANA');
+      textSize(20);
+      textAlign(CENTER, CENTER);
+      image(letreiro, 395, 135, 600, 110);
+      text("Selecione seu desastre natural", width / 2, 120);
+      //texto botões
+      textSize(20);
+      image(letreirovermelho, 255, 370, 250, 110);
+      image(letreirovermelho, 520, 370, 250, 110);
+      text("Tsunami", 250, 360);
+      text("Erupção", 520, 360);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
