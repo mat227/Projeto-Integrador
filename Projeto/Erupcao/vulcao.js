@@ -10,7 +10,7 @@ let quantidade = 300;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  // Carregar imagens
+  // Carregar as imagens
   imgInicio = loadImage('eupcaofundo.jpg');
 
   // Criar o botão para iniciar a erupção
