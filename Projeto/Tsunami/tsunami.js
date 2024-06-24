@@ -22,8 +22,7 @@ function setup() {
   amplitudeSlider = createSlider(0, 400, 200);
   frequenciaSlider = createSlider(0, 400, 200);
 
-
-//botão que inicia o Tsunami
+//botão para o inicio do Tsunami
   iniciarDesastre = createButton('Iniciar Tsunami');
   iniciarDesastre.position(400, height + 30);
   iniciarDesastre.mousePressed(iniciarTsunami);
